@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio | Asmar Ameen</title>
+    <meta name="description" content="Professional portfolio of John Doe, showcasing skills, projects and experience.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --dark: #212529;
+            --light: #f8f9fa;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold gradient-text">M.A.M ASMAR</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden absolute left-0 right-0 bg-white w-full px-4 pb-4 shadow-lg">
+                <a href="#home" class="block py-2 border-b">Home</a>
+                <a href="#about" class="block py-2 border-b">About</a>
+                <a href="#skills" class="block py-2 border-b">Skills</a>
+                <a href="#projects" class="block py-2 border-b">Projects</a>
+                <a href="#contact" class="block py-2">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Hi, I'm <span class="gradient-text">Asmar Ameen</span></h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Web Developer</h2>
+                <p class="text-gray-600 mb-8 max-w-lg">I build exceptional digital experiences with clean, efficient code and thoughtful user interfaces. Currently focused on modern web technologies and scalable architectures.</p>
+                <div class="flex space-x-4 mb-12">
+                    <a href="#projects" class="px-6 py-3 bg-gradient-to-r from-[#3a86ff] to-[#8338ec] text-white rounded-lg font-medium hover:opacity-90 transition">View Work</a>
+                    <a href="#contact" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition">Contact Me</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/AsmarAmeen" aria-label="GitHub profile" class="text-gray-600 hover:text-[#3a86ff] transition">
+                        <svg xmlns="https://github.com/AsmarAmeen" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohammad-asmar-45326b2b4/" aria-label="LinkedIn profile" class="text-gray-600 hover:text-[#3a86ff] transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/AmeenAsmar15259?t=EIOshHiZ-XQtTGclw0GPQg&s=09 " aria-label="Twitter profile" class="text-gray-600 hover:text-[#3a86ff] transition">
+                        <svg xmlns="https://x.com/AmeenAsmar15259?t=EIOshHiZ-XQtTGclw0GPQg&s=09 " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+           <div class="order-1 md:order-2 flex justify-center">
+    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-gray-100">
+        <img src="profile.png" 
+             alt="Professional headshot" 
+             class="w-full h-full object-cover object-top" 
+             >
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-[#3a86ff] to-[#8338ec] mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-semibold mb-4">My Story</h3>
+                    <p class="text-gray-600 mb-4">I’m Asmar Ameen, a passionate web developer and IT student with a strong foundation in HTML, CSS, JavaScript, and backend technologies like PHP and MySQL. I am currently pursuing a Bachelor of Arts at the South Eastern University of Sri Lanka and a Higher National Diploma in Information Technology (HNDIT) at SLIATE.</p>
+                    <p class="text-gray-600 mb-4">My journey into web development began through academic projects and personal exploration, leading to the creation of systems like college admission portals, inventory management applications, and dynamic portfolio websites. I also bring creative flair through my Canva Pro design skills, enabling me to combine functionality with visual appeal</p>
+                    <p class="text-gray-600 mb-6">I’m always excited to take on new challenges, learn modern tools, and contribute to meaningful projects — especially in areas like frontend development, UI/UX design, and data-driven systems.</p>
+                    <a href="cv.pdf" class="px-6 py-3 bg-gradient-to-r from-[#3a86ff] to-[#8338ec] text-white rounded-lg font-medium hover:opacity-90 transition inline-block">Download CV</a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-xl font-semibold mb-4">Technical Experience</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Frontend Development</span>
+                                    <span class="text-gray-500">75%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-gradient-to-r from-[#3a86ff] to-[#8338ec] h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Backend Development</span>
+                                    <span class="text-gray-500">55%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-gradient-to-r from-[#3a86ff] to-[#8338ec] h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">UI/UX Design</span>
+                                    <span class="text-gray-500">55%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-gradient-to-r from-[#3a86ff] to-[#8338ec] h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Data Analyst</span>
+                                    <span class="text-gray-500">40%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-gradient-to-r from-[#3a86ff] to-[#8338ec] h-2.5 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Skills</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-[#3a86ff] to-[#8338ec] mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">I've worked with a variety of technologies in the web development world. Here are the tools I use most often.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div class="skill-card bg-white p-6 rounded-xl shadow-md transition cursor-default">
+    <div class="w-14 h-14 mb-4 mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/56x56?text=JS'">
+    </div>
+    <h3 class="text-center font-semibold">JavaScript</h3>
+  </div>
+
+  <div class="skill-card bg-white p-6 rounded-xl shadow-md transition cursor-default">
+    <div class="w-14 h-14 mb-4 mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/56x56?text=React'">
+    </div>
+    <h3 class="text-center font-semibold">React</h3>
+  </div>
+
+  
+
+<div class="skill-card bg-white p-6 rounded-xl shadow-md transition cursor-default">
+  <div class="w-14 h-14 mb-4 mx-auto">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Canva logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/56x56?text=Canva'">
+  </div>
+  <h3 class="text-center font-semibold">Figma</h3>
+</div>
+
+<div class="skill-card bg-white p-6 rounded-xl shadow-md transition cursor-default">
+  <div class="w-14 h-14 mb-4 mx-auto">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft Office logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/56x56?text=Office'">
+  </div>
+  <h3 class="text-center font-semibold">Microsoft Office</h3>
+</div>
+
+
+  <div class="skill-card bg-white p-6 rounded-xl shadow-md transition cursor-default">
+    <div class="w-14 h-14 mb-4 mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/56x56?text=HTML'">
+    </div>
+    <h3 class="text-center font-semibold">HTML5</h3>
+  </div>
+
+  <div class="skill-card bg-white p-6 rounded-xl shadow-md transition cursor-default">
+    <div class="w-14 h-14 mb-4 mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/56x56?text=CSS'">
+    </div>
+    <h3 class="text-center font-semibold">CSS3</h3>
+  </div>
+
+  <div class="skill-card bg-white p-6 rounded-xl shadow-md transition cursor-default">
+    <div class="w-14 h-14 mb-4 mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/56x56?text=MySQL'">
+    </div>
+    <h3 class="text-center font-semibold">MySQL</h3>
+  </div>
+
+  <div class="skill-card bg-white p-6 rounded-xl shadow-md transition cursor-default">
+    <div class="w-14 h-14 mb-4 mx-auto">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/56x56?text=PHP'">
+    </div>
+    <h3 class="text-center font-semibold">PHP</h3>
+  </div>
+</div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Projects</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-[#3a86ff] to-[#8338ec] mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Here are some of the projects I've worked on recently. I'm always building something new!</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="E learning.png" alt="Dashboard interface of a SaaS application showing analytics charts and user metrics" class="w-full h-full object-cover transition duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x600?text=SaaS+Dashboard'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Learning Website</h3>
+                        <p class="text-gray-600 mb-4">An online platform that showcases the education center, available courses, and student reviews — helping learners choose the right path with confidence..</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded-full">PHP</span>
+                            <span class="text-xs px-3 py-1 bg-purple-50 text-purple-600 rounded-full">JavaScript</span>
+                            <span class="text-xs px-3 py-1 bg-green-50 text-green-600 rounded-full">MySQL</span>
+                        </div>
+                        <div class="mt-4 flex space-x-3">
+                        
+                            <a href="https://github.com/AsmarAmeen/E-Learning-Website" class="text-sm font-medium text-[#3a86ff] hover:underline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="school.png" alt="Mobile application interface showing a social media feed with user posts and interactions" class="w-full h-full object-cover transition duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x600?text=Social+App'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">School Management System</h3>
+                        <p class="text-gray-600 mb-4">A desktop application for managing school activities like student records, class schedules, subjects, and exams in an organized way.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded-full">Java</span>
+                        
+                            <span class="text-xs px-3 py-1 bg-orange-50 text-orange-600 rounded-full">MySql</span>
+                        </div>
+                        <div class="mt-4 flex space-x-3">
+                         
+                            <a href="https://github.com/AsmarAmeen/School-Management-System" class="text-sm font-medium text-[#3a86ff] hover:underline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="travel.png" alt="E-commerce website showing product catalog with clean grid layout and shopping cart" class="w-full h-full object-cover transition duration-500 hover:scale-105" onerror="this.src='https://placehold.co/800x600?text=E-commerce'">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Travel Around Website</h3>
+                        <p class="text-gray-600 mb-4">A travel website that helps users explore destinations, view travel packages, and make bookings easily with a user-friendly layout.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-yellow-50 text-yellow-600 rounded-full">JavaScript</span>
+                            <span class="text-xs px-3 py-1 bg-green-50 text-green-600 rounded-full">PHP</span>
+                            <span class="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded-full">MySQL</span>
+                        </div>
+                        <div class="mt-4 flex space-x-3">
+                          
+                            <a href="https://github.com/AsmarAmeen/travel-website" class="text-sm font-medium text-[#3a86ff] hover:underline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-[#3a86ff] to-[#8338ec] mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <p class="text-gray-600 mb-6">I'm available for freelance work and full-time positions. Feel free to contact me using any of the methods below.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3a86ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <a href="mailto:john@example.com" class="text-gray-600 hover:text-[#3a86ff] transition">ameenasmar98@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3a86ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <a href="tel:+1234567890" class="text-gray-600 hover:text-[#3a86ff] transition">+94 772531348</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3a86ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Location</h4>
+                                <p class="text-gray-600">Kurunegala,Sri Lanka</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form action="https://formspree.io/f/meozgnvy" method="POST" class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a86ff] focus:border-[#3a86ff] outline-none transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a86ff] focus:border-[#3a86ff] outline-none transition">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a86ff] focus:border-[#3a86ff] outline-none transition">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a86ff] focus:border-[#3a86ff] outline-none transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-[#3a86ff] to-[#8338ec] text-white rounded-lg font-medium hover:opacity-90 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Asmar Ameen</h3>
+                    <p class="mb-4">Web developer creating modern, performant web applications with great user experiences.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="GitHub profile" class="text-gray-300 hover:text-white transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3
